@@ -1,0 +1,12 @@
+{
+  "name": "voice-ai-for-bharat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local multilingual voice-first healthcare appointment assistant demo.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0"
+  }
+}

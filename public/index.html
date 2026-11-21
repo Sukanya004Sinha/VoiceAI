@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ee">
+    <meta name="description" content="A multilingual voice-first healthcare appointment assistant for Bharat.">
+    <title>Suno — Healthcare, in your language</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Suno home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 5.2c-5.3 0-9.6 4.1-9.6 9.2 0 3 1.5 5.6 3.8 7.3v4.1l5.8-2.7c5.3 0 9.6-4.1 9.6-9.2S21.3 5.2 16 5.2Z" fill="currentColor"/><path d="M13.1 14.7v-2m2.9 4.2v-6.3m2.9 5.1v-3.9" stroke="#F5F4EE" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">suno<span>.</span></span>
+        </a>
+        <nav class="top-links" aria-label="Main navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#trust">Our promise</a>
+        </nav>
+        <div class="topbar-right">
+          <span class="demo-pill"><span></span> LIVE DEMO</span>
+          <button class="avatar-button" type="button" aria-label="Your profile">S</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-star">✳</span> HEALTHCARE THAT HEARS YOU</div>
+            <h1 id="hero-title">Apni bhasha.<br><span>Apna khayal.</span></h1>
+            <p class="hero-description">Talk to a health assistant that understands you. Find the right doctor, book a visit, and feel cared for — in the language you call home.</p>
+            <div class="hero-notes">
+              <span><span class="note-check">✓</span> Your language, your choice</span>
+              <span><span class="note-check">✓</span> Care options, close to home</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun-disc"></div>
+            <div class="art-spark spark-one">✳</div>
+            <div class="art-spark spark-two">✦</div>
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-person">
+              <div class="person-hair"></div>
+              <div class="person-face"><span class="person-eye left"></span><span class="person-eye right"></span><span class="person-smile"></span></div>
+              <div class="person-neck"></div>
+              <div class="person-shirt"><span class="shirt-collar"></span></div>
+              <div class="person-earring"></div>
+            </div>
+            <div class="art-caption"><span class="caption-dot"></span> Here for you, always</div>
+          </div>
+        </section>
+
+        <section class="assistant-layout" aria-label="Voice healthcare assistant">
+          <div class="conversation-panel">
+            <div class="panel-top">
+              <div class="assistant-identity">
+                <div class="assistant-avatar">
+                  <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4.5a11.5 11.5 0 1 0 0 23 11.5 11.5 0 0 0 0-23Z" fill="#D9EADF"/><path d="M16 9v14m-7-7h14" stroke="#24583F" stroke-width="2.8" stroke-linecap="round"/></svg>
+                  <span class="online-dot"></span>
+                </div>
+                <div><h2>Suno Health Assistant</h2><p><span class="online-label"></span> Here to help, in your language</p></div>
+              </div>
+              <button class="more-button" type="button" aria-label="Conversation options">···</button>
+            </div>
+
+            <div class="language-row">
+              <span class="language-label">SPEAK IN</span>
+              <div class="language-options" role="group" aria-label="Choose your language">
+                <button class="language-chip active" type="button" data-language="hi-IN" aria-pressed="true">हिंदी</button>
+                <button class="language-chip" type="button" data-language="ta-IN" aria-pressed="false">தமிழ்</button>
+                <button class="language-chip" type="button" data-language="en-IN" aria-pressed="false">English</button>
+              </div>
+              <span class="language-hint">You can switch anytime</span>
+            </div>
+
+            <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions text"></div>
+            <div id="suggestion-row" class="suggestion-row" aria-label="Suggested messages"></div>
+
+            <form id="chat-form" class="composer">
+              <button id="mic-button" class="mic-button" type="button" aria-label="Speak your message" title="Speak your message">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 11.5v.7a6.5 6.5 0 0 0 13 0v-.7M12 18.7V22m-3 0h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <label class="sr-only" for="message-input">Write your message</label>
+              <input id="message-input" autocomplete="off" placeholder="यहाँ लिखें या बोलें..." maxlength="500">
+              <button id="send-button" class="send-button" type="submit" aria-label="Send message" disabled>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 14-7-4.4 14-2.6-6.4L5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m12 12 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+            </form>
+            <div class="composer-foot"><span>Demo only · Avoid sharing sensitive health details</span><span id="voice-status" aria-live="polite"></span></div>
+          </div>
+
+          <aside class="side-panel">
+            <div class="help-card">
+              <div class="help-card-top"><span class="help-icon">✳</span><span class="help-kicker">A LITTLE HELP GOES A LONG WAY</span></div>
+              <h3>Health feels better<br>when it's understood.</h3>
+              <p>Tell us what’s on your mind. We’ll find the right care, together.</p>
+              <button id="find-doctor-button" class="primary-button" type="button">Find a doctor <span aria-hidden="true">↗</span></button>
+              <div class="help-decoration" aria-hidden="true"></div>
+            </div>
+            <div id="trust" class="trust-card">
+              <div class="trust-title"><span class="trust-shield">✓</span><h3>Care you can trust</h3></div>
+              <div class="trust-item"><span class="trust-icon mint">◈</span><div><strong>Doctors who listen</strong><p>Sample listings for this demo</p></div></div>
+              <div class="trust-item"><span class="trust-icon peach">⌁</span><div><strong>Your wellbeing matters</strong><p>Avoid sharing sensitive details</p></div></div>
+              <div class="trust-item"><span class="trust-icon lilac">♡</span><div><strong>Here beyond the visit</strong><p>Reminders and follow-up care</p></div></div>
+            </div>
+            <div class="language-note"><span class="note-spark">✳</span><p><strong>Namaste. Vanakkam. Hello.</strong><br>Care begins with a conversation.</p></div>
+          </aside>
+        </section>
+
+        <section id="how-it-works" class="steps-section">
+          <div><div class="eyebrow">CARE, MADE SIMPLE</div><h2>One conversation. <span>Thoughtful care.</span></h2></div>
+          <div class="steps-grid">
+            <article class="step"><span class="step-number">01</span><div class="step-icon">◖</div><h3>Tell us what you need</h3><p>Speak naturally in Hindi, Tamil, or English — even mix them up.</p></article>
+            <article class="step"><span class="step-number">02</span><div class="step-icon">⌕</div><h3>Meet the right doctor</h3><p>We’ll help you find a nearby doctor who speaks your language.</p></article>
+            <article class="step"><span class="step-number">03</span><div class="step-icon">✳</div><h3>We’ll take it from here</h3><p>Book your visit, get a reminder, and stay connected after.</p></article>
+          </div>
+        </section>
+      </main>
+      <footer><span>Made with care for Bharat <span class="heart">♥</span></span><span class="footer-disclaimer">Suno is a demo assistant, not a medical diagnosis or emergency service.</span></footer>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

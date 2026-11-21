@@ -1,0 +1,6 @@
+node_modules/
+.env
+.tmp/
+.npm-cache/
+*.log
+data/*.sqlite*
